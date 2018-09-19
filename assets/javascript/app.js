@@ -53,37 +53,37 @@ $(document).ready(function () {
 
     var startGame = function () {
 
-    //current score starts at 0
-    currentScore = 0;
+        //current score starts at 0
+        currentScore = 0;
 
-    //set a new target score - the get random generator is called to insert 19, 120 for min and max
-    targetScore = getRandom (19, 120);
+        //set a new target score - the get random generator is called to insert 19, 120 for min and max
+        targetScore = getRandom(19, 120);
 
-    //go into the var crystals and target their values to change
-    crystal.green.value = getRandom (1, 12);
-    crystal.blue.value = getRandom (1,12);
-    crystal.pink.value = getRandom (1, 12);
-    crystal.orange.value = getRandom (1, 12);
+        //go into the var crystals and target their values to change
+        crystal.green.value = getRandom(1, 12);
+        crystal.blue.value = getRandom(1, 12);
+        crystal.pink.value = getRandom(1, 12);
+        crystal.orange.value = getRandom(1, 12);
 
-    //they will all be a random value between 1 and 12
+        //they will all be a random value between 1 and 12
 
-    //grab the html elements to print the scores to
-    $("#target-score").text(targetScore);
-    $("#current-score").text(currentScore);
+        //grab the html elements to print the scores to
+        $("#target-score").text(targetScore);
+        $("#current-score").text(currentScore);
 
-    //console log all of the elements 
-    console.log("Target score is" + targetScore);
-    console.log("The current score is" + currentScore);
-    console.log("Green" + crystal.green.value);
-    console.log("Blue" + crystal.blue.value);
-    console.log("Pink" + crystal.pink.value);
-    console.log("Orange" + crystal.oragne.value)
+        //console log all of the elements 
+        console.log("Target score is" + targetScore);
+        console.log("The current score is" + currentScore);
+        console.log("Green" + crystal.green.value);
+        console.log("Blue" + crystal.blue.value);
+        console.log("Pink" + crystal.pink.value);
+        console.log("Orange" + crystal.oragne.value)
     } //start game ends
 
     //check to see if the user won or lost the game
     //create a new var for checking
 
-    var checkWin = function() {
+    var checkWin = function () {
 
         //if the current score is equal to the target score than its a win
         //if the current score is higher than the target score than its a loss
@@ -93,11 +93,11 @@ $(document).ready(function () {
             //Add to loss counter
             losses++;
             //target losses score in html to change it
-           $("#loss-count").text(losses);
+            $("#loss-count").text(losses);
 
-           //restart the game
-           startGame();
-           //this sends a message back to the startGame function above and it goes through the motions again
+            //restart the game
+            startGame();
+            //this sends a message back to the startGame function above and it goes through the motions again
         }
 
         else if (currentScore === targetScore) {
@@ -115,7 +115,7 @@ $(document).ready(function () {
 
     //When the crystals are clicked - add their values to current score
     //create a new value for when they are clicked
-    var addValues = function(clickedCrystal) {
+    var addValues = function (clickedCrystal) {
 
         //changed the current score when they are clicked
         //add a .value 
@@ -129,10 +129,28 @@ $(document).ready(function () {
 
     }
 
-//MAIN PROCESS
-//========
-//Start the game
+    //MAIN PROCESS
+    //========
+    //Start the game - putting it all together
 
+    startGame()
+
+    $("#green").click(function () {
+        addValues(crystal.green);
+    });
+
+
+    $("#blue").click(function () {
+        addValues(crystal.blue);
+    });
+
+    $("#pink").click(function () {
+        addValues(crystal.pink);
+    });
+
+    $("#orange").click(function () {
+        addValues(crystal.orange);
+    });
 
 
 
