@@ -1,0 +1,9 @@
+.jumbotron {
+    background-color: rgb(30, 0, 48);
+    color: white;
+}
+
+.p1 {
+    position: fixed;
+    color: yellow;
+}
