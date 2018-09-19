@@ -5,26 +5,26 @@ $(document).ready(function () {
     //target each gem as a random value
 
     //crystal variables
-    var crystals = {
+    var crystal = {
 
         green: {
             name: "green",
-            value = 0
+            value: 0
         },
 
         blue: {
             name: "blue",
-            value = 0
+            value: 0
         },
 
         pink: {
             name: "pink",
-            value = 0
+            value: 0
         },
 
         orange: {
             name: "orange",
-            value = 0
+            value: 0
         }
 
     }
@@ -61,6 +61,23 @@ $(document).ready(function () {
 
     //go into the var crystals and target their values to change
     crystal.green.value = getRandom (1, 12);
+    crystal.blue.value = getRandom (1,12);
+    crystal.pink.value = getRandom (1, 12);
+    crystal.orange.value = getRandom (1, 12);
+
+    //they will all be a random value between 1 and 12
+
+    //grab the html elements to print the scores to
+    $("#target-score").text(targetScore);
+    $("#current-score").text(currentScore);
+
+    //console log all of the elements 
+    console.log("Target score is" + targetScore);
+    console.log("The current score is" + currentScore);
+    console.log("Green" + crystal.green.value);
+    console.log("Blue" + crystal.blue.value);
+    console.log("Pink" + crystal.pink.value);
+    console.log("Orange" + crystal.oragne.value);
 
 
     }
