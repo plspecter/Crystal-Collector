@@ -72,12 +72,12 @@ $(document).ready(function () {
         $("#current-score").text(currentScore);
 
         //console log all of the elements 
-        console.log("Target score is" + targetScore);
-        console.log("The current score is" + currentScore);
-        console.log("Green" + crystal.green.value);
-        console.log("Blue" + crystal.blue.value);
-        console.log("Pink" + crystal.pink.value);
-        console.log("Orange" + crystal.oragne.value)
+        console.log("Target score is " + targetScore);
+        console.log("The current score is " + currentScore);
+        console.log("Green " + crystal.green.value);
+        console.log("Blue " + crystal.blue.value);
+        console.log("Pink " + crystal.pink.value);
+        console.log("Orange " + crystal.orange.value)
     } //start game ends
 
     //check to see if the user won or lost the game
