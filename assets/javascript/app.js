@@ -77,10 +77,62 @@ $(document).ready(function () {
     console.log("Green" + crystal.green.value);
     console.log("Blue" + crystal.blue.value);
     console.log("Pink" + crystal.pink.value);
-    console.log("Orange" + crystal.oragne.value);
+    console.log("Orange" + crystal.oragne.value)
+    } //start game ends
+
+    //check to see if the user won or lost the game
+    //create a new var for checking
+
+    var checkWin = function() {
+
+        //if the current score is equal to the target score than its a win
+        //if the current score is higher than the target score than its a loss
+
+        if (currentScore > targetScore) {
+            console.log("you loser, loser");
+            //Add to loss counter
+            losses++;
+            //target losses score in html to change it
+           $("#loss-count").text(losses);
+
+           //restart the game
+           startGame();
+           //this sends a message back to the startGame function above and it goes through the motions again
+        }
+
+        else if (currentScore === targetScore) {
+            console.log("you win, loser");
+            wins++
+
+            $("#win-count").text(wins);
+
+            startGame();
+        }
 
 
     }
+
+
+    //When the crystals are clicked - add their values to current score
+    //create a new value for when they are clicked
+    var addValues = function(clickedCrystal) {
+
+        //changed the current score when they are clicked
+        //add a .value 
+        currentScore += clickedCrystal.value;
+
+        //change in the html
+        $("#current-score").text(currentScore);
+
+        //call back the check win function so it knows to compare itself to the number chosen
+        checkWin()
+
+    }
+
+//MAIN PROCESS
+//========
+//Start the game
+
 
 
 
